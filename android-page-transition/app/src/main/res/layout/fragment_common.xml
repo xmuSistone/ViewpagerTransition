@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.stone.transition.DragLayout
+        android:id="@+id/drag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:bottomDragVisibleHeight="@dimen/card_bottom_info_height">
+
+        <!--1. 这个是底部的view-->
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/card_bottom_margin"
+            android:background="@drawable/white_back"
+            android:scaleX="0.6"
+            android:scaleY="0.6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_bottom_info_height"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/address4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="La Crescenta-Montrose, CA91020 Glendale"
+                    android:textColor="#333"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/address5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="NO. 7911847"
+                        android:textColor="#333"
+                        android:textSize="15sp" />
+
+                    <RatingBar
+                        android:id="@+id/rating"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.5" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="10dp"
+                    android:background="#f0f0f0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/head1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/head1" />
+
+                    <ImageView
+                        android:id="@+id/head2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="-10dp"
+                        android:src="@drawable/head2" />
+
+                    <ImageView
+                        android:id="@+id/head3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="-10dp"
+                        android:src="@drawable/head3" />
+
+                    <ImageView
+                        android:id="@+id/head4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="-10dp"
+                        android:src="@drawable/head4" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1px"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/dot" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!--3. 頂層可滑动的View-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="230dp"
+            android:layout_height="330dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/card_bottom_margin"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="6dp"
+            app:cardMaxElevation="6dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/image" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/address1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="NORTH LAT"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/address2"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/gps" />
+
+                <TextView
+                    android:id="@+id/address3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="EAST LNG 17"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </com.stone.transition.DragLayout>
+
+
+</FrameLayout>
