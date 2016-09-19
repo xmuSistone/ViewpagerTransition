@@ -256,7 +256,11 @@ public class DragLayout extends FrameLayout {
     @Override
     public boolean onTouchEvent(MotionEvent e) {
         // 统一交给mDragHelper处理，由DragHelperCallback实现拖动效果
-        mDragHelper.processTouchEvent(e);
+        try {
+            mDragHelper.processTouchEvent(e);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         return true;
     }
 
