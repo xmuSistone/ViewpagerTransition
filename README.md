@@ -6,6 +6,6 @@ https://dribbble.com/shots/2493845-ToFind-Transition-Test
 
 Actual effects:<br>
 <td>
-	 <img src="capture1.jpg" width="450" height="800" /><br>
-	 <img src="capture2.gif" width="450" height="800" />
+	 <img src="capture1.jpg" width="400" height="711" /><br>
+	 <img src="capture2.gif" width="400" height="711" />
 </td>
