@@ -23,7 +23,7 @@ public class DragLayout extends FrameLayout {
     private static final int DRAG_SWITCH_DISTANCE_THRESHOLD = 100;
     private static final int DRAG_SWITCH_VEL_THRESHOLD = 800;
 
-    private static final float MIN_SCALE_RATIO = 0.8f;
+    private static final float MIN_SCALE_RATIO = 0.5f;
     private static final float MAX_SCALE_RATIO = 1.0f;
 
     private static final int STATE_CLOSE = 1;
@@ -165,13 +165,17 @@ public class DragLayout extends FrameLayout {
                 boolean gotoBottom = releasedChild.getTop() - dragTopDest > DRAG_SWITCH_DISTANCE_THRESHOLD || yvel > DRAG_SWITCH_VEL_THRESHOLD;
                 if (!gotoBottom) {
                     finalY = dragTopDest;
+
+                    // 如果按下时已经展开，又向上拖动了，就进入详情页
+                    if (dragTopDest - releasedChild.getTop() > mTouchSlop) {
+                        gotoDetailActivity();
+                    }
                 }
             }
 
             if (mDragHelper.smoothSlideViewTo(releasedChild, originX, finalY)) {
                 ViewCompat.postInvalidateOnAnimation(DragLayout.this);
             }
-
         }
     }
 
@@ -179,15 +183,20 @@ public class DragLayout extends FrameLayout {
      * 顶层ImageView位置变动，需要对底层的view进行缩放显示
      */
     private void processLinkageView() {
-        int maxDistance = originY - dragTopDest;
-        int currentDistance = topView.getTop() - dragTopDest;
-        float scaleRatio = 1;
-        float distanceRatio = (float) currentDistance / maxDistance;
-        if (currentDistance > 0) {
-            scaleRatio = MIN_SCALE_RATIO + (MAX_SCALE_RATIO - MIN_SCALE_RATIO) * (1 - distanceRatio);
+        if (topView.getTop() > originY) {
+            bottomView.setAlpha(0);
+        } else {
+            bottomView.setAlpha(1);
+            int maxDistance = originY - dragTopDest;
+            int currentDistance = topView.getTop() - dragTopDest;
+            float scaleRatio = 1;
+            float distanceRatio = (float) currentDistance / maxDistance;
+            if (currentDistance > 0) {
+                scaleRatio = MIN_SCALE_RATIO + (MAX_SCALE_RATIO - MIN_SCALE_RATIO) * (1 - distanceRatio);
+            }
+            bottomView.setScaleX(scaleRatio);
+            bottomView.setScaleY(scaleRatio);
         }
-        bottomView.setScaleX(scaleRatio);
-        bottomView.setScaleY(scaleRatio);
     }
 
     class MoveDetector extends GestureDetector.SimpleOnGestureListener {
@@ -229,7 +238,7 @@ public class DragLayout extends FrameLayout {
         super.onLayout(changed, left, top, right, bottom);
         originX = (int) topView.getX();
         originY = (int) topView.getY();
-        dragTopDest = topView.getTop() - bottomDragVisibleHeight;
+        dragTopDest = bottomView.getBottom() - bottomDragVisibleHeight - topView.getMeasuredHeight();
     }
 
     /* touch事件的拦截与处理都交给mDraghelper来处理 */

@@ -12,8 +12,7 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image" />
+            android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="NORTH LAT"
-                android:textColor="#ffffff"
+                android:textColor="#12edf0"
                 android:textSize="15sp" />
 
             <ImageView
@@ -48,7 +47,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:text="EAST LNG 17"
-                android:textColor="#ffffff"
+                android:textColor="#12edf0"
                 android:textSize="13sp" />
 
         </RelativeLayout>
@@ -67,7 +66,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/paper_back"
+                android:background="@drawable/paper_background"
                 android:orientation="vertical"
                 android:padding="20dp">
 

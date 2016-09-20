@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 /**
  * Created by xmuSistone on 2016/9/19.
  */
 public class DetailActivity extends FragmentActivity {
+
+    public static final String EXTRA_IMAGE_URL = "detailImageUrl";
 
     public static final String IMAGE_TRANSITION_NAME = "transitionImage";
     public static final String ADDRESS1_TRANSITION_NAME = "address1";
@@ -59,6 +63,9 @@ public class DetailActivity extends FragmentActivity {
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+
+        String imageUrl = getIntent().getStringExtra(EXTRA_IMAGE_URL);
+        ImageLoader.getInstance().displayImage(imageUrl, imageView);
 
         ViewCompat.setTransitionName(imageView, IMAGE_TRANSITION_NAME);
         ViewCompat.setTransitionName(address1, ADDRESS1_TRANSITION_NAME);

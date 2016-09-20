@@ -35,7 +35,8 @@
                     android:layout_marginLeft="10dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:text="La Crescenta-Montrose, CA91020 Glendale"
+                    android:paddingRight="10dp"
+                    android:text="La Crescenta-Montrose, CA91020 Glende And Way"
                     android:textColor="#333"
                     android:textSize="15sp" />
 
@@ -117,7 +118,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/dot" />
+                        android:src="@drawable/three_dot" />
 
                 </LinearLayout>
 
@@ -125,13 +126,12 @@
 
         </FrameLayout>
 
-        <!--3. 頂層可滑动的View-->
+        <!--2. 頂層可滑动的View-->
 
         <android.support.v7.widget.CardView
-            android:layout_width="230dp"
-            android:layout_height="330dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="@dimen/card_bottom_margin"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
             app:cardCornerRadius="5dp"
             app:cardElevation="6dp"
             app:cardMaxElevation="6dp">
@@ -140,8 +140,7 @@
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:src="@drawable/image" />
+                android:scaleType="fitXY" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -155,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="NORTH LAT"
-                    android:textColor="#ffffff"
+                    android:textColor="#12edf0"
                     android:textSize="15sp" />
 
                 <ImageView
@@ -173,7 +172,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:text="EAST LNG 17"
-                    android:textColor="#ffffff"
+                    android:textColor="#12edf0"
                     android:textSize="13sp" />
 
             </RelativeLayout>

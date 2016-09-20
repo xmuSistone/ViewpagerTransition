@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 /**
  * Created by xmuSistone on 2016/9/18.
  */
@@ -22,6 +24,7 @@ public class CommonFragment extends Fragment implements DragLayout.GotoDetailLis
     private View address1, address2, address3, address4, address5;
     private RatingBar ratingBar;
     private View head1, head2, head3, head4;
+    private String imageUrl;
 
     @Nullable
     @Override
@@ -29,6 +32,7 @@ public class CommonFragment extends Fragment implements DragLayout.GotoDetailLis
         View rootView = inflater.inflate(R.layout.fragment_common, null);
         DragLayout dragLayout = (DragLayout) rootView.findViewById(R.id.drag_layout);
         imageView = (ImageView) dragLayout.findViewById(R.id.image);
+        ImageLoader.getInstance().displayImage(imageUrl, imageView);
         address1 = dragLayout.findViewById(R.id.address1);
         address2 = dragLayout.findViewById(R.id.address2);
         address3 = dragLayout.findViewById(R.id.address3);
@@ -62,6 +66,11 @@ public class CommonFragment extends Fragment implements DragLayout.GotoDetailLis
                 new Pair(head4, DetailActivity.HEAD4_TRANSITION_NAME)
         );
         Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra(DetailActivity.EXTRA_IMAGE_URL, imageUrl);
         ActivityCompat.startActivity(activity, intent, options.toBundle());
+    }
+
+    public void bindData(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
