@@ -18,7 +18,7 @@ Then, in viewpager's fragment item, vertical slide is an independent module, whi
 [antoniolg/MaterialEverywhere](https://github.com/antoniolg/MaterialEverywhere)
 
 ####Demo Apk
-[download](blob/master/pageTransition.apk?raw=true)
+[download](https://github.com/xmuSistone/android-page-transition/blob/master/pageTransition.apk?raw=true)
 
 ### Version: 1.0
 
