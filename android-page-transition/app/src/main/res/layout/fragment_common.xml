@@ -17,6 +17,7 @@
             android:layout_height="320dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="@dimen/card_bottom_margin"
+            android:alpha="0"
             android:background="@drawable/white_back"
             android:scaleX="0.6"
             android:scaleY="0.6">
@@ -129,8 +130,8 @@
         <!--2. 頂層可滑动的View-->
 
         <android.support.v7.widget.CardView
-            android:layout_width="250dp"
-            android:layout_height="300dp"
+            android:layout_width="220dp"
+            android:layout_height="264dp"
             android:layout_gravity="center"
             app:cardCornerRadius="5dp"
             app:cardElevation="6dp"
