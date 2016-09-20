@@ -6,7 +6,7 @@ The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transi
 ####Captured images:
 <td>
 	 <img src="capture1.jpg" width="405" height="720" />
-	 <img src="capture2.gif" width="405" height="720" />
+	 <embed src="video.mp4" type="audio/mpeg" loop="true" autostart="true" width="405" height="720" />
 </td>
 
 ####Coding design
