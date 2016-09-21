@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="50dp"
             android:alpha="0"
             android:background="@drawable/white_back"
             android:scaleX="0.5"
