@@ -169,6 +169,8 @@ public class DragLayout extends FrameLayout {
                     // 如果按下时已经展开，又向上拖动了，就进入详情页
                     if (dragTopDest - releasedChild.getTop() > mTouchSlop) {
                         gotoDetailActivity();
+                        postResetPosition();
+                        return;
                     }
                 }
             }
@@ -177,6 +179,16 @@ public class DragLayout extends FrameLayout {
                 ViewCompat.postInvalidateOnAnimation(DragLayout.this);
             }
         }
+    }
+
+
+    private void postResetPosition() {
+        this.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                topView.offsetTopAndBottom(dragTopDest - topView.getTop());
+            }
+        }, 500);
     }
 
     /**
