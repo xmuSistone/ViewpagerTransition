@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="20dp">
+        android:padding="12dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -61,10 +61,10 @@
 
     <!--4. 顶部的titleBar-->
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
+        android:orientation="vertical">
 
         <!--沉浸式activity，这个view是用来占位的-->
 
@@ -103,16 +103,5 @@
         </RelativeLayout>
 
     </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="425dp"
-        android:layout_marginTop="64dp" />
-
 
 </RelativeLayout>

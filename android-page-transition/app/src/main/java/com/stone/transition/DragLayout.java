@@ -55,6 +55,7 @@ public class DragLayout extends FrameLayout {
 
         mDragHelper = ViewDragHelper
                 .create(this, 10f, new DragHelperCallback());
+        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_TOP);
         moveDetector = new GestureDetectorCompat(context, new MoveDetector());
         moveDetector.setIsLongpressEnabled(false); // 不处理长按事件
 
@@ -198,7 +199,11 @@ public class DragLayout extends FrameLayout {
         if (topView.getTop() > originY) {
             bottomView.setAlpha(0);
         } else {
-            bottomView.setAlpha(1);
+            float alpha = (originY - topView.getTop()) * 0.01f;
+            if (alpha > 1) {
+                alpha = 1;
+            }
+            bottomView.setAlpha(alpha);
             int maxDistance = originY - dragTopDest;
             int currentDistance = topView.getTop() - dragTopDest;
             float scaleRatio = 1;
