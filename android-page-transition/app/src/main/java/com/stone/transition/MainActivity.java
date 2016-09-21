@@ -125,10 +125,12 @@ public class MainActivity extends FragmentActivity {
      * 调整沉浸式菜单的title
      */
     private void dealStatusBar() {
-        int statusBarHeight = getStatusBarHeight();
-        ViewGroup.LayoutParams lp = positionView.getLayoutParams();
-        lp.height = statusBarHeight;
-        positionView.setLayoutParams(lp);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            int statusBarHeight = getStatusBarHeight();
+            ViewGroup.LayoutParams lp = positionView.getLayoutParams();
+            lp.height = statusBarHeight;
+            positionView.setLayoutParams(lp);
+        }
     }
 
     private int getStatusBarHeight() {

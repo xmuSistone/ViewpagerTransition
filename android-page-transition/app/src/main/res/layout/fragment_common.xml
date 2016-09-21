@@ -15,8 +15,8 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="320dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="@dimen/card_bottom_margin"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="35dp"
             android:alpha="0"
             android:background="@drawable/white_back"
             android:scaleX="0.5"
@@ -129,10 +129,12 @@
 
         <!--2. 頂層可滑动的View-->
 
-        <android.support.v7.widget.CardView
-            android:layout_width="220dp"
-            android:layout_height="264dp"
+        <com.stone.transition.AspectRatioCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="6dp"
             app:cardMaxElevation="6dp">
@@ -178,7 +180,7 @@
 
             </RelativeLayout>
 
-        </android.support.v7.widget.CardView>
+        </com.stone.transition.AspectRatioCardView>
 
     </com.stone.transition.DragLayout>
 
