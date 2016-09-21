@@ -1,12 +1,12 @@
 # android-page-transition
-viewpager with vertical sliding effects and activity transition
-
-The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transition-Test)
-
+viewpager with vertical sliding effects and activity transition<br>
+<img src="capture1.jpg" width="540" height="960" /> <br>
+The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transition-Test)<br>
 ####Captured images:
 <td>
-	 <img src="capture1.jpg" width="405" height="720" />
-	 <img src="capture2.gif" width="405" height="720" />
+         <img src="gif1.gif" width="290" height="515" />
+	 <img src="gif2.gif" width="290" height="515" />
+	 <img src="gif3.gif" width="290" height="515" />
 </td>
 
 ####Coding design
