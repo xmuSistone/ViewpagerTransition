@@ -4,10 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--DragLayout要求所有子View的layout_gravity都居中显示-->
+
     <com.stone.transition.DragLayout
         android:id="@+id/drag_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:bototmExtraIndicatorHeight="@dimen/card_extra_height"
         app:bottomDragVisibleHeight="@dimen/card_bottom_info_height">
 
         <!--1. 这个是底部的view-->
@@ -16,11 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="50dp"
             android:alpha="0"
-            android:background="@drawable/white_back"
-            android:scaleX="0.5"
-            android:scaleY="0.5">
+            android:background="@drawable/white_back">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -133,6 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/card_extra_height"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             app:cardCornerRadius="5dp"
@@ -183,6 +184,5 @@
         </com.stone.transition.AspectRatioCardView>
 
     </com.stone.transition.DragLayout>
-
 
 </FrameLayout>

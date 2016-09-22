@@ -13,12 +13,14 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 
 /**
+ * 尽量考虑了所有操作系统版本的分辨率适配
  * Created by xmuSistone on 2016/9/18.
  */
 public class DragLayout extends FrameLayout {
 
-    private int bottomDragVisibleHeight;
-    private int dragTopDest = 0;
+    private int bottomDragVisibleHeight; // 滑动可见的高度
+    private int bototmExtraIndicatorHeight; // 底部指示器的高度
+    private int dragTopDest = 0; // 顶部View滑动的目标位置
     private static final int DECELERATE_THRESHOLD = 120;
     private static final int DRAG_SWITCH_DISTANCE_THRESHOLD = 100;
     private static final int DRAG_SWITCH_VEL_THRESHOLD = 800;
@@ -51,6 +53,7 @@ public class DragLayout extends FrameLayout {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.app, 0, 0);
         bottomDragVisibleHeight = (int) a.getDimension(R.styleable.app_bottomDragVisibleHeight, 0);
+        bototmExtraIndicatorHeight = (int) a.getDimension(R.styleable.app_bototmExtraIndicatorHeight, 0);
         a.recycle();
 
         mDragHelper = ViewDragHelper
@@ -81,6 +84,7 @@ public class DragLayout extends FrameLayout {
                         ViewCompat.postInvalidateOnAnimation(DragLayout.this);
                     }
                 } else {
+                    // 点击时为展开状态，直接进入详情页
                     gotoDetailActivity();
                 }
             }
@@ -253,6 +257,7 @@ public class DragLayout extends FrameLayout {
         }
 
         super.onLayout(changed, left, top, right, bottom);
+
         originX = (int) topView.getX();
         originY = (int) topView.getY();
         dragTopDest = bottomView.getBottom() - bottomDragVisibleHeight - topView.getMeasuredHeight();
@@ -277,6 +282,18 @@ public class DragLayout extends FrameLayout {
         }
 
         return shouldIntercept && yScroll;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        // bottomMarginTop高度的计算，还是需要有一个清晰的数学模型才可以。
+        // 实现的效果，是topView.top和bottomView.bottom展开前、与展开后都整体居中
+        int bottomMarginTop = (bottomDragVisibleHeight + topView.getMeasuredHeight() / 2 - bottomView.getMeasuredHeight() / 2) / 2 - bototmExtraIndicatorHeight;
+        FrameLayout.LayoutParams lp1 = (LayoutParams) bottomView.getLayoutParams();
+        lp1.setMargins(0, bottomMarginTop, 0, 0);
+        bottomView.setLayoutParams(lp1);
     }
 
     @Override
