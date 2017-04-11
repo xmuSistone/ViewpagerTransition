@@ -3,6 +3,11 @@ viewpager with vertical sliding effects and activity transition<br>
 <img src="capture1.jpg" width="540" height="960" /> <br>
 The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transition-Test)<br>
 #### Captured images:
+
+![PREVIEW](gif1.gif)
+![PREVIEW](gif2.gif)
+![PREVIEW](gif3.gif)
+
 <td>
          <img src="gif1.gif" width="290" height="515" />
 	 <img src="gif2.gif" width="290" height="515" />
