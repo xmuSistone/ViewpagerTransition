@@ -8,12 +8,6 @@ The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transi
 ![PREVIEW](gif2.gif)
 ![PREVIEW](gif3.gif)
 
-<td>
-         <img src="gif1.gif" width="290" height="515" />
-	 <img src="gif2.gif" width="290" height="515" />
-	 <img src="gif3.gif" width="290" height="515" />
-</td>
-
 #### Coding design
 Sliding pages to the left or right, as we know, could be implemented by using ViewPager. And fortunately, ViewPager's PagerTransformer is allowed for customization. That's to say, [CustPagerTransformer](android-page-transition/app/src/main/java/com/stone/transition/CustPagerTransformer.java) could get rid of all the parallax effects. <br>
 Then, in viewpager's fragment item, vertical slide is an independent module, which could be realized by using ViewDragHelper. In the activity transition part, android OS (above 5.0) makes it easy to transfer to another activity. <br>
