@@ -2,16 +2,16 @@
 viewpager with vertical sliding effects and activity transition<br>
 
 <p align="center">
-<img src="https://github.com/xmuSistone/android-page-transition/blob/master/capture1.jpg?raw=true " alt="Drawing" width="550" />
+<img src="https://github.com/xmuSistone/android-page-transition/blob/master/capture1.jpg?raw=true " alt="Drawing" width="360"/>
 </br>
 </center>
 <p>
-The original design is:  [here](https://dribbble.com/shots/2493845-ToFind-Transition-Test)<br>
+The original design is here: https://dribbble.com/shots/2493845-ToFind-Transition-Test
 
 #### Captured images:
-![PREVIEW](gif1.gif)
-![PREVIEW](gif2.gif)
-![PREVIEW](gif3.gif)
+
+<img src="gif1.gif" width="269" height="480"/> <img src="gif2.gif" width="269" height="480"/> <img src="gif3.gif" width="269" height="480"/>
+
 
 #### Coding design
 Sliding pages to the left or right, as we know, could be implemented by using ViewPager. And fortunately, ViewPager's PagerTransformer is allowed for customization. That's to say, [CustPagerTransformer](android-page-transition/app/src/main/java/com/stone/transition/CustPagerTransformer.java) could get rid of all the parallax effects. <br>
@@ -43,3 +43,8 @@ Then, in viewpager's fragment item, vertical slide is an independent module, whi
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    
+    
+
+ [1]: http://square.github.com/dagger/
+
